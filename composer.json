@@ -12,10 +12,10 @@
         }
     ],
     "require": {
-        "sentry/sentry": ">=0.8.0"
+        "sentry/sentry": "^1.8"
     },
     "require-dev": {
-        "yiisoft/yii": ">=1.1.14"
+        "yiisoft/yii": "~1.1.15"
     },
     "autoload": {
         "classmap": [
