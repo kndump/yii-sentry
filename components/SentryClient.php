@@ -24,7 +24,6 @@
 class SentryClient extends CApplicationComponent
 {
     // Sentry constants.
-    const MAX_MESSAGE_LENGTH = 2048;
     const MAX_TAG_KEY_LENGTH = 32;
     const MAX_TAG_VALUE_LENGTH = 200;
     const MAX_CULPRIT_LENGTH = 200;
@@ -145,12 +144,6 @@ class SentryClient extends CApplicationComponent
      */
     public function captureMessage($message, $params = array(), $options = array(), $stack = false, $context = null)
     {
-        if (strlen($message) > self::MAX_MESSAGE_LENGTH) {
-            throw new CException(sprintf(
-                'SentryClient cannot send messages that contain more than %d characters.',
-                self::MAX_MESSAGE_LENGTH
-            ));
-        }
         if (!$this->isEnvironmentEnabled()) {
             return null;
         }
